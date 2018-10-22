@@ -1,0 +1,14 @@
+exports.run = async (client, message) => {
+// Code goes here
+}
+// Name must be lowercase
+exports.help = {
+  name: '',
+  description: '',
+  usage: '',
+  inHelp: ''
+}
+
+exports.conf = {
+  aliases: []
+}
