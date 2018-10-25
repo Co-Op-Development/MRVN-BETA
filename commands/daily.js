@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
     .setColor('ORANGE')
     .setTitle("Daily Reward", true)
     .setDescription("Daily Reward of 150 credits has been deposited into your account!", true)
-    .setFooter(`Requested by: ${message.author.username}`)
+        .setFooter(`{message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
     .setTimestamp()
 
   message.channel.send(embed)
@@ -17,7 +17,7 @@ exports.run = async (client, message) => {
     .setColor('ORANGE')
     .setTitle("Daily Reward", true)
     .setDescription("Pilot, you have already claimed your Daily Reward! Try again **" + moment().endOf('day').fromNow() + '**.', true)
-    .setFooter(`Requested by: ${message.author.username}`)
+        .setFooter(`Requested by: ${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
     .setTimestamp()
 
 

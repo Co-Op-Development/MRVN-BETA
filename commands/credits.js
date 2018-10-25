@@ -4,7 +4,7 @@ exports.run = async (client, message) => {
     .setTitle("Bank", true)
     .addField("Pilot", message.author.username, true)
     .addField("Account Balance", `${client.userInfo.get(message.author.id).money.toLocaleString()} credits`)
-    .setFooter(`Requested by: ${message.author.username}`) 
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
     .setTimestamp()
   
   message.channel.send(embed)

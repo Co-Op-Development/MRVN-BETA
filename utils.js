@@ -1,5 +1,5 @@
 module.exports = {
-  experienceGain(client, level, id, message) {
+  experienceGain(client, level, id) {
     const experienceToNextLevel = level * 1000 + 125;
     const experienceGained = Math.floor(Math.random() * 7) + 5;
     const userInfo = client.userInfo.get(id);

@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     .setColor('ORANGE')
     .addField('Commands', client.commands.filter(u => u.help.inHelp === 'yes').map(u => `• ${prefix}\`${u.help.name}\` \n\t⮑ \`${u.help.usage.replace('None', 'There are no aliases for this command!')}\``), true)
     .addField('Do {}help followed by any of the commands listed above for a quick description & to see any aliases!', `\u200b`, true)
-    .setFooter(`Requested by: ${message.author.username}`)  
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))  
     .setTimestamp()
   
   message.channel.send(embed)
@@ -19,7 +19,7 @@ var embed = new client.Discord.MessageEmbed()
 .setTitle(cmd)
 .addField('Description', command.description, true)
 .addField('Aliases', '\t' + command.usage.replace('None', '\`There are no aliases for this command!\`'), true)
-.setFooter(`Requested by: ${message.author.username}`)  
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
 .setTimestamp()
 
 message.channel.send(embed)

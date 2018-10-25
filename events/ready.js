@@ -30,9 +30,9 @@ exports.run = (client) => {
   
   function botStatus() {
     let status = [
-      //`Prefix: ${config.prefix}`,
-      `Rewrite in progress...`
-      //`${client.guilds.size} guilds with ${client.users.size} users!`
+      `Prefix: ${config.prefix}`,
+      //`Rewrite in progress...`
+      `${client.guilds.size} guilds with ${client.users.size} users!`
     ];
     let rstatus = Math.floor(Math.random() * status.length);
 
