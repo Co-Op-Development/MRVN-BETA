@@ -3,7 +3,7 @@
      .setColor('GREEN')
      .setTitle("Evaluation")
      .setDescription("Sorry, the `eval` command can only be executed by the Developer.")
-     .setFooter(`Requested by: ${message.author.username}`) 
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
      .setTimestamp()
   
   if (!["342796453477089281", "183790855813988353", "257413019787722752"].includes(message.author.id)) return message.channel.send(NotDev);
@@ -30,7 +30,7 @@
     .addField(":inbox_tray: Input", `\`\`\`js\n${code}\n\`\`\``)
     .addField(":outbox_tray: Output", `\`\`\`js\n${clean(evaled).replace(client.token, "nein")}\n\`\`\``)
     .addField('Type', `\`\`\`xl\n${(typeof rawEvaled).substr(0, 1).toUpperCase() + (typeof rawEvaled).substr(1)}\n\`\`\``)
-    .setFooter(`Requested by: ${message.author.username}`) 
+    .setFooter(`{message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
     .setTimestamp()
 
   message.channel.send(EvalResult);

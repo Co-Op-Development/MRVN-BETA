@@ -3,7 +3,7 @@ exports.run = async (client, message) => {
      .setColor('GREEN')
      .setTitle("Database Reset")
      .setDescription("Sorry, the `resetDB` command can only be executed by the Developer.")
-     .setFooter(`Requested by: ${message.author.username}`) 
+         .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
      .setTimestamp()
   
   if (!["342796453477089281", "183790855813988353"].includes(message.author.id)) return message.channel.send(NotDev);

@@ -15,9 +15,6 @@ exports.run = async (client, message) => {
         })
     }
 
-    //
-
-
       if (!message.content.startsWith(config.prefix)) return;
   cmd.run(client,message,args);
 }

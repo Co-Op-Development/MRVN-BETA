@@ -3,8 +3,6 @@ exports.run = async (client, message) => {
   let money = client.userInfo; 
   var total = 0; money.forEach(u => { total += Number(u.money)});
   var richestCash = 0;
-  var HLvl = 0;
-  let HLvlUser;
   let richestUser;
   const arrOfUsers = client.userInfo.map(g => g);
   
@@ -15,14 +13,7 @@ exports.run = async (client, message) => {
       richestUser = id;
       
      } 
-  });
-  client.userInfo.forEach((user, id) => {
-    if (Number(user.lvl) > HLvl) {
-      HLvl = user.lvl;
-      HLvlUser = id;
-    }
-  });
-  
+  });  
   console.log(richestUser)
   richestUser = await client.users.fetch(richestUser);
   const embed = new client.Discord.MessageEmbed()
@@ -31,8 +22,7 @@ exports.run = async (client, message) => {
     .addField('Pilots', arrOfUsers.length, true)
     .addField('Total Credits', `${total.toLocaleString()}`, true)
     .addField('Richest Pilot', `${richestUser} with ${richestCash} credits`, true)
-    .addField('Highest Level', `${HLvlUser} at level ${HLvl}`, true)
-    .setFooter(`Requested by: ${message.author.username}`) 
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
     .setTimestamp()
   
   message.channel.send(embed);
