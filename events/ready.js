@@ -1,8 +1,8 @@
 const moment = require('moment');
-require('moment-duration-format');  
-const config = require("../config.json")
+require('moment-duration-format')
+const config = require("/home/ittim/MRVN/config.json")
 exports.run = (client) => {
-  
+
   const http = require('http');
   const express = require('express');
   const app = express();
@@ -14,7 +14,7 @@ exports.run = (client) => {
   setInterval(() => {
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
   }, 25000)
-  
+
 
   let Ready = [
     `----------------------------------------------------------------------------`,
@@ -25,22 +25,19 @@ exports.run = (client) => {
     `Author      :  Ittim | Mio`,
     `----------------------------------------------------------------------------`
   ].join('\n');
-  
+
   console.log(`[Ready]\n${Ready}`);
-  
+
   function botStatus() {
     let status = [
       `Prefix: ${config.prefix}`,
-      //`Rewrite in progress...`
       `${client.guilds.size} guilds with ${client.users.size} users!`
     ];
+
     let rstatus = Math.floor(Math.random() * status.length);
 
-    client.user.setActivity(status[rstatus], {type: 'STREAMING', url: "https://www.twitch.tv/twitch"}); 
-  }; 
+  client.user.setActivity(status[rstatus], {type: 'STREAMING', url: "https://www.twitch.tv/twitch"});
+  };
   setInterval(botStatus, 20000);
-  
-  setInterval(function(){  }, 300000);
 
 }
-
