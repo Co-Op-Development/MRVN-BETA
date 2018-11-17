@@ -1,4 +1,7 @@
-{ 
+{
   "token"  : "TOKEN",
-  "prefix" : "{}"
+  "prefix" : "{}",
+  "version" : "0.0.5",
+  "author" : "Ittim#1814"
 }
+
