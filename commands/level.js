@@ -3,13 +3,13 @@ exports.run = async (client, message) => {
     .setColor('ORANGE')
     .setTitle("XP")
     .addField("Level", `You are level **${client.userInfo.get(message.author.id).level}**!`)
-    .addField("Current Experience", `With **${client.userInfo.get(message.author.id).exp}** experience!`)
-    .addField("Experience Needed", `**${client.userInfo.get(message.author.id).level * 1000 + 125 - client.userInfo.get(message.author.id).exp }** experience until you level up!`)
-    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024})) 
+    .addField("Current Experience", `With **${client.userInfo.get(message.author.id).exp.toLocaleString()}** experience!`)
+    .addField("Experience Needed", `**${client.userInfo.get(message.author.id).level * 1000 + 125 - client.userInfo.get(message.author.id).exp}** experience until you level up!`)
+    .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
     .setTimestamp()
-   
+
      message.channel.send(embed)
-  
+
 }
 exports.help = {
   name: 'level',
