@@ -2,7 +2,7 @@ exports.run = async (client, message) => {
   const embed = new client.Discord.MessageEmbed()
     .setColor('ORANGE')
     .setTitle("Profile")
-    .setThumbnail(message.author.displayAvatarURL({format: 'png', size:1024}))
+    .setThumbnail(message.author.displayAvatarURL({size:1024}))
     .addField("Pilot", message.author.username, true)
     .addField("Account Balance", `${client.userInfo.get(message.author.id).money.toLocaleString()} credits`, true)
     .addField("Level", `**${client.userInfo.get(message.author.id).level}**!`, true)
