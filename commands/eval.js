@@ -6,7 +6,7 @@
     .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
      .setTimestamp()
 
-  if (!["342796453477089281", "183790855813988353", "216403723818106880"].includes(message.author.id)) return message.channel.send(NotDev);
+  if (!["183790855813988353, 216403723818106880"].includes(message.author.id)) return message.channel.send(NotDev);
    function clean(text) {
      if (typeof(text) === "string")
        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
