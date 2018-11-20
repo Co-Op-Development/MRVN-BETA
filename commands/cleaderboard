@@ -1,7 +1,7 @@
 exports.run = async (client, message) => {
   
   let data = client.userInfo.array();
-  let d = data.sort((a, b) => b.level - a.level).splice(0, 10);
+  let d = data.sort((a, b) => b.money - a.money).splice(0, 10);
   var sending = "";
   
   for (var i = 0; i < d.length; i++) {
