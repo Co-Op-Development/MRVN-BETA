@@ -17,12 +17,12 @@ exports.run = async (client, message) => {
 
 }
 exports.help = {
-  name: 'leaderboard',
-  description: 'Shows up to the top 10 users and their level',
-  usage: '{}lb, {}leaderboard',
+  name: 'xpleaderboard',
+  description: 'Shows up to the top 10 users by level and their experience.',
+  usage: '{}xplb, {}xpleaderboard',
   inHelp: 'yes'
 }
 
 exports.conf = {
-  aliases: ['lb']
+  aliases: ['xplb']
 }
