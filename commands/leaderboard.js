@@ -1,10 +1,13 @@
 exports.run = async (client, message) => {
   let data = client.userInfo.array();
-  let filteredData = data.sort((a, b) => b.level - a.level).splice(0, 10);
+  let d = data.sort((a, b) => b.level - a.level).splice(0, 10);
 
   var sending = "";
   for (var i = 0; i < d.length; i++) {
-    sending += `\`${i+1}\`. User, level **${d[i].level}** with **${d[i].exp}** exp\n`
+
+    let user = client.users.get(d[i].id);
+    if (!user) return;
+    sending += `\`${i+1}\`. ${user.username}, level **${d[i].level}** with **${d[i].exp}** exp\n`
   }; 
   
   const embed = new client.Discord.MessageEmbed()
@@ -18,8 +21,8 @@ exports.run = async (client, message) => {
 }
 exports.help = {
   name: 'xpleaderboard',
-  description: 'Shows up to the top 10 users by level and their experience.',
-  usage: '{}xplb',
+  description: 'Shows up to the top 10 users and their level',
+  usage: '{}xplb, {}xpleaderboard',
   inHelp: 'yes'
 }
 
