@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
   for (var i = 0; i < d.length; i++) {
     let user = client.users.get(d[i].id);
     if (!user) return;
-    sending += `\`${i+1}\`. ${user.username}, level **${d[i].level}** with **${d[i].exp}** exp\n`
+    sending += `\`${i+1}\`. **${user.username}**, level **${d[i].level}** with **${d[i].exp}** exp\n`
   }; 
   
   const embed = new client.Discord.MessageEmbed()
