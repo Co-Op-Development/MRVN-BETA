@@ -19,7 +19,7 @@ exports.run = async (client, message) => {
 exports.help = {
   name: 'xpleaderboard',
   description: 'Shows up to the top 10 users by level and their experience.',
-  usage: '{}xplb, {}xpleaderboard',
+  usage: '{}xplb',
   inHelp: 'yes'
 }
 
