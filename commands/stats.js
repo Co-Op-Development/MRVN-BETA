@@ -28,7 +28,7 @@ exports.run = async (client, message) => {
     .addField('Pilots', arrOfUsers.length, true)
     .addField('Total Credits', `${total.toLocaleString()}`, true)
     .addField('Richest Pilot', `${richestUser} with ${richestCash.toLocaleString('en-IN',{ style: 'decimal'})} credits`, true)
-    .addField('Most Experienced Pilot', `**${highestLevelUser}** at **${client.userInfo.fetch(highestLevelUser.id).level}** level with **${client.userInfo.fetch(highestLevelUser.id).exp.toLocaleString()}** $
+    .addField('Most Experienced Pilot', `**${highestLevelUser}** at level **${client.userInfo.fetch(highestLevelUser.id).level}** with **${client.userInfo.fetch(highestLevelUser.id).exp.toLocaleString()}** $
     .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
     .setTimestamp()
 
