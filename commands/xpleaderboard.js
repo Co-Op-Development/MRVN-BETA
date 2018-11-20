@@ -13,7 +13,7 @@ exports.run = async (client, message) => {
   const embed = new client.Discord.MessageEmbed()
   .setColor('ORANGE')
   .addField("Global Level Leaderboard", sending)
-  .setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
+  .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
   .setTimestamp()
 
   message.channel.send(embed)
