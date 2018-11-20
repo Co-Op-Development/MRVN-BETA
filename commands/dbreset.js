@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
          .setFooter(`${message.author.username}`, message.author.displayAvatarURL({format:'png',size:1024}))
      .setTimestamp()
 
-  if (!["183790855813988353, 216403723818106880"].includes(message.author.id)) return message.channel.send(NotDev);
+  if (!["183790855813988353"].includes(message.author.id)) return message.channel.send(NotDev);
   client.userInfo.deleteAll()
   return message.channel.send(`User database has successfully been reset!`);
 
