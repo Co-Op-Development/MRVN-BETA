@@ -28,7 +28,6 @@ module.exports.run = async (client, message, args) => {
             if (clean(evaled).length > 1900) {
                 hastebin(clean(evaled), "js").then(r => {
                     message.channel.send(`**Output was too large**\n${r}`)
-                    return message.author.getDMChannel().then((dm) => dm.createMessage(r))
                 });
 
             } else {
